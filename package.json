@@ -1,0 +1,99 @@
+{
+    "name": "vscode-sentence-navigate",
+    "displayName": "Navigate and Select by Sentence",
+    "description": "Navigate and Select forward/backward by English sentences",
+    "version": "0.0.1",
+    "publisher": "zbiener, based on sashaweiss",
+    "engines": {
+        "vscode": "^1.10.0"
+    },
+    "license": "MIT",
+    "categories": [
+        "Other"
+    ],
+    "keywords": [
+        "sentence",
+        "select",
+        "navigation",
+        "navigate"
+    ],
+    "activationEvents": [
+        "onCommand:sentence-navigate.jumpBackward",
+        "onCommand:sentence-navigate.jumpForward",
+        "onCommand:sentence-navigate.selectBackward",
+        "onCommand:sentence-navigate.selectForward",
+        "onCommand:sentence-navigate.selectCurrentSentence"
+    ],
+    "main": "src/extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "sentence-navigate.jumpBackward",
+                "title": "Sentence jump back"
+            },
+            {
+                "command": "sentence-navigate.jumpForward",
+                "title": "Sentence jump forward"
+            },
+            {
+                "command": "sentence-navigate.selectBackward",
+                "title": "Sentence select back"
+            },
+            {
+                "command": "sentence-navigate.selectForward",
+                "title": "Sentence select forward"
+            },
+            {
+                "command": "sentence-navigate.selectCurrentSentence",
+                "title": "Select current sentence"
+            }
+        ],
+        "keybindings": [
+            {
+                "command": "sentence-navigate.jumpBackward",
+                "key": "cmd+left",
+                "when": "editorTextFocus && editorLangId == 'markdown'"
+            },
+            {
+                "command": "sentence-navigate.jumpForward",
+                "key": "cmd+right",
+                "when": "editorTextFocus && editorLangId == 'markdown'"
+            },
+            {
+                "command": "sentence-navigate.selectBackward",
+                "key": "cmd+shift+left",
+                "when": "editorTextFocus && editorLangId == 'markdown'"
+            },
+            {
+                "command": "sentence-navigate.selectForward",
+                "key": "cmd+shift+right",
+                "when": "editorTextFocus && editorLangId == 'markdown'"
+            },
+            {
+                "command": "sentence-navigate.selectCurrentSentence",
+                "key": "cmd+enter",
+                "when": "editorTextFocus &&! editorReadonly && editorLangId == 'markdown'"
+            }
+        ]
+    },
+    "scripts": {
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^2.0.3",
+        "vscode": "^1.0.0",
+        "mocha": "^2.3.3",
+        "eslint": "^3.6.0",
+        "@types/node": "^6.0.40",
+        "@types/mocha": "^2.2.32"
+    },
+    "bugs": {
+        "url": "https://github.com/zbiener/vscode_sentence_travel/issues"
+    },
+    "homepage": "https://github.com/zbiener/vscode_sentence_travel/blob/master/README.md",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/zbiener/vscode_sentence_travel"
+    }
+}
